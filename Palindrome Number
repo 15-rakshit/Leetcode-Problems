@@ -1,0 +1,29 @@
+class Solution {
+
+    public boolean isPalindrome(int x) {
+        
+
+int rev = 0; // initialise the reverese number
+
+int dup = x; // store the original value of x, as it is changing later in the code
+
+while(x > 0){ // condition for the loop
+
+int rem = x % 10; // extract the last number
+
+rev = (rev * 10) + rem; // make the reveresed number
+
+x = x / 10; // reduce the number to get the second last number and so on
+
+}
+
+if(rev == dup){ //compare both of them
+
+    return true;
+
+}
+
+else return false;
+
+    }
+}
