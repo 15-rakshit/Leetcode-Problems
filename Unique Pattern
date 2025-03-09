@@ -1,0 +1,40 @@
+/*
+   1
+  212
+ 32123
+4321234
+ 32123
+  212
+   1
+ */
+
+public class prac5 {
+    public static void main(String[] args) {
+        pattern(5);
+    }
+
+    public static void pattern(int n) {
+        // total number of rows
+        for (int row = 1; row <= 2 * n - 1; row++) {
+            // imagine a line along the column of 1's; the total_per_col is the elements
+            // prev to 1, the rest part of the row is covered in the last for loop
+            int total_col_per_row = (row > n) ? 2 * n - row : row;
+
+            for (int space = 0; space < n - total_col_per_row; space++) {
+
+                System.out.print(" ");
+
+            }
+
+            for (int col = total_col_per_row; col >= 1; col--) {
+                System.out.print(col);
+            }
+            // find the relation between rows, col and n
+            for (int col = 2; col <= total_col_per_row; col++) {
+                System.out.print(col);
+            }
+            System.out.println();
+        }
+
+    }
+}
